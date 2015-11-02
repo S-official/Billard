@@ -6,6 +6,8 @@
 // DESCRIPTION: a vector class to represent 3-D points and vectors
 ////////////////////////////////////////////////////////////////////
 
+//(Martin Bertram ist Professor an der HS Bremen und hat uns die Klasse zur Verfügung gestellt.)
+
 #include "vec3.hpp"
 
 Vec3::Vec3() {}
@@ -91,7 +93,7 @@ double Vec3::LengthXY() const {
   return sqrt(p[0] * p[0] + p[1] * p[1]);
 }
 
-//maybe hu�!
+//maybe huä!
 double Vec3::LengthXZ() const {
   return sqrt(p[0] * p[0] + p[2] * p[2]);
 }
