@@ -1,4 +1,5 @@
 # Billard
+Ein Spiel mit OpenGL in C++ für das Modul: Computergrafik bei Martin Hering-Bertram und Peter Krug.
 
 Ziel des Spiels ist es den Gravity Pull zu erreichen. den Kreis unten links.
 
@@ -16,5 +17,5 @@ Z - Quader/Zylinder höher			H - Quader/Zylinder kürzer
 U - Quader/Zylinder breiter			J - Quader/Zylinder kürzer
 K - Quader/Zylinder nach Links rotieren		 I - Quaer/Zylinder nach rechts rotieren
 
-
+Beispielbild eines Tests, bei dem möglichst viele Objekte platziert wurden.
 ![Objekte](http://i.imgur.com/nGUuM73.png)
