@@ -67,9 +67,6 @@ obj3* theQuad = new obj3('q');
 
 void initObsticals(){
 
-//	int conePoints[totalCones][3];
-//	conePoints[1][0] = 1;
-
 	theBall->buildSphere(Vec3(0,1,0), 0.5);
 
 
@@ -103,22 +100,9 @@ void initObsticals(){
 	allObst.push_back(*theOnlyCone);
 
 
-
-
-//
-//	obj3* quadWall1 = new obj3('q');
-//	quadWall1->buildQuader(Vec3(-2,0,2), 2, 4, 3);
-//	allObst.push_back(*quadWall1);
-
-
-//	theQuad->buildQuaderByPoints(Vec3(2,0,2), Vec3(1,0,3), Vec3(2,0,4), Vec3(3,0,3), 1.0);
-//	theQuad->buildQuader(Vec3(-6,0,-2), 2, 2, 1);
 	theQuad->buildQuader(Vec3(10,0,0), Vec3(3,0,0), Vec3(0,0,3), 4);
 	allObst.push_back(*theQuad);
 
-//	obj3* reverseQuad = new obj3('q');
-//	reverseQuad->buildQuader(Vec3(-2, -7, 2), 2, 4, 3);
-//	allObst.push_back(*reverseQuad);
 
 
 }
@@ -145,50 +129,8 @@ bool checkAllCollisions(){
 	}
 	allObst.begin();
 
-//	theQuad->calcCollisionEquasions(*theBall);
-
 	return erg;
 }
-
-
-
-//void initball1Array(){
-//
-//
-//
-//	direction = Vec3(0,0,0);
-//
-//	ball1["curSpeed"] = 0;
-//	ball1["speed"] = 80;
-//	ball1["step"] =  0.1;
-//	ball1["x"] = 0;
-//	ball1["y"] = 0;
-//	ball1["z"] = 0;
-//	ball1["move"] = 0;
-//	ball1["a"] = 0;
-//	ball1["b"] = 0;
-//
-//	printf("ready filling the ball1-array");
-//}
-
-//void initball2Array(){
-//
-//
-//
-//	direction = Vec3(0,0,0);
-//
-//	ball2["curSpeed"] = 0;
-//	ball2["speed"] = 80;
-//	ball2["step"] =  0.1;
-//	ball2["x"] = -2;
-//	ball2["y"] = 0;
-//	ball2["z"] = -2;
-//	ball2["move"] = 0;
-//	ball2["a"] = 0;
-//	ball2["b"] = 0;
-//
-//	printf("ready filling the ball1-array");
-//}
 
 
 
@@ -222,13 +164,13 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action,
        		  quaLength += 0.2;}
     if (key == GLFW_KEY_J)
     { cylRadius -= 0.2;
- 	  	  	  	  	  quaLength -= 0.2;}
+ 	quaLength -= 0.2;}
     if (key == GLFW_KEY_Z)
     {cylHeight += 0.2;
-	  	  	  	  quaHeight += 0.2;}
+	 quaHeight += 0.2;}
     if (key == GLFW_KEY_H)
     { cylHeight -= 0.2;
-       				  quaHeight -= 0.2;}
+       	quaHeight -= 0.2;}
     if (key == GLFW_KEY_T)
     	quaWidth += 0.2;
     if (key == GLFW_KEY_G)
@@ -286,33 +228,7 @@ static void mouse_callback(GLFWwindow* window, int button, int action,
 	        else if(quaMode == true)
 	        {
 	        	obj3* quader2 = new obj3('q');
-	        		    	//quader2->buildQuader(Vec3(mposx * .04, 0, mposy * .04), quaWidth, quaLength, quaHeight);
-//	        				Vec3 einheitsvektor = Vec3(1,0,1);
-//	        				einheitsvektor.p[0] = einheitsvektor.p[0] * cos(quaRotation) - einheitsvektor.p[2] * sin(quaRotation);
-//							einheitsvektor.p[2] = einheitsvektor.p[0] * sin(quaRotation) + einheitsvektor.p[2] * cos(quaRotation);
-//
-//
-//
-//	        				Vec3 leX = Vec3(0,0,quaWidth);
-//	        				Vec3 leZ = Vec3(quaLength, 0,0);
-
-//	        				leX.p[2] += quaWidth;
-//	        				leZ.p[0] += quaLength;
-//
-//
-//
-//
-//	        				Vec3 leX = Vec3(0,0,quaWidth);
-//	        				Vec3 leZ = Vec3(quaLength, 0,0);
-//
-//	        				leX.p[0] = leX.p[0] * cos(quaRotation) - leX.p[2] * sin(quaRotation);
-//	        				leX.p[2] = leX.p[0] * sin(quaRotation) + leX.p[2] * cos(quaRotation);
-//
-//	        				leZ =
-//
-//	        				leZ.p[0] = leZ.p[0] * cos(quaRotation) - leZ.p[2] * sin(quaRotation);
-//							leZ.p[2] = leZ.p[0] * sin(quaRotation) + leZ.p[2] * cos(quaRotation);
-
+	        		    
 	        		    	quader2->buildQuader(Vec3(mposx * .04, 0, mposy * .04), Vec3(quaRotation,0,quaWidth), Vec3(quaLength,0,-quaRotation), quaHeight);
 //							quader2->buildQuader(Vec3(mposx * .04, 0, mposy * .04), (leX+einheitsvektor), (leZ+einheitsvektor), quaHeight);
 
@@ -394,7 +310,7 @@ void DrawDirArrow() {
     glEnd();
 }
 
-// draw a sphere composed of triangles
+// Kugel aus Dreiecken
 void DrawSphere(const Vec3& ctr, double r) {
 
 
@@ -442,32 +358,10 @@ void DrawBillTableFloor() {
     glVertex3f(-12.5, 0, 7.5);
     glVertex3f(-12.5, 0, -7.5);
 
-
-//    glNormal3f(0.26, 0, -0.96);
-//    glVertex3f(-4, 1, 2);
-//    glVertex3f(-4, 0, 2);
-//    glVertex3f(12, 0, 5);
-//    glVertex3f(12, 1, 5);
-
     glVertex3f(-12.5, -4, -7.5);
     glVertex3f(-12.5, -4, 7.5);
     glVertex3f(12.5, -4, 7.5);
     glVertex3f(12.5, -4, -7.5);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     glEnd();
 
@@ -476,15 +370,10 @@ void DrawBillTableFloor() {
 void DrawHole() {
 
     glBegin(GL_QUADS);
-
-
     glVertex3f(-12.5, 0.01, 1);
     glVertex3f(-5.5, 0.01, 1);
     glVertex3f(-5.5, 0.01, -1);
     glVertex3f(-12.5, 0.01, -1);
-
-
-
     glEnd();
 
 }
@@ -568,19 +457,6 @@ void DrawBillTableWalls() {
     glVertex3f(12, 1, 7);
     glVertex3f(12, 1, -7);
     glVertex3f(12.5, 2, -7.5);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     glNormal3f(0, 0, 1);
         glVertex3f(-12, -5, 7);
@@ -738,85 +614,6 @@ void InitLighting() {
     glLoadIdentity();
 }
 
-//void checkAndApplyCollision(){
-//	
-//
-//	//billard abmessungen
-//	double upperBorder, lowerBorder, leftBorder, rightBorder;
-//	upperBorder = 4.5;
-//	lowerBorder = -4.5;
-//	rightBorder = 6.5;
-//	leftBorder = -6.5;
-//
-//	//for ball1 in ball1s:
-//
-//	if(ball1["x"] > rightBorder){
-//		direction.p[0] = -direction.p[0];
-//		ball1["x"] = rightBorder;
-////		ball1["speedX"] = -ball1["speed"];
-//		if(mute==false){printf("colision: x -rB \n");}
-//	}
-//	if(ball1["x"] < leftBorder){
-//		direction.p[0] = -direction.p[0];
-//		ball1["x"] = leftBorder;
-////		ball1["speedX"] = ball1["speed"];
-//		if(mute==false){printf("colision: x -lB \n");}
-//	}
-//	if(ball1["z"] > upperBorder){
-//		direction.p[2] = -direction.p[2];
-//		ball1["z"] = upperBorder;
-////		ball1["speedZ"] = -ball1["speed"];
-//		if(mute==false){printf("colision: z -uB\n");}
-//	}
-//	if(ball1["z"] < lowerBorder){
-//		direction.p[2] = -direction.p[2];
-//		ball1["z"] = lowerBorder;
-////		ball1["speedZ"] = ball1["speed"];
-//		if(mute==false){printf("colision: z -lB\n");}
-//
-//	}
-//
-//	if(ball2["x"] > rightBorder){
-//			direction.p[0] = -direction.p[0];
-//			ball2["x"] = rightBorder;
-//		}
-//		if(ball2["x"] < leftBorder){
-//			direction.p[0] = -direction.p[0];
-//			ball2["x"] = leftBorder;
-//		}
-//		if(ball2["z"] > upperBorder){
-//			direction.p[2] = -direction.p[2];
-//			ball2["z"] = upperBorder;
-//		}
-//		if(ball2["z"] < lowerBorder){
-//			direction.p[2] = -direction.p[2];
-//			ball2["z"] = lowerBorder;
-//
-//		}
-//
-//
-//		double x = ball1["x"]-ball2["x"];
-//		double y = ball1["z"]-ball2["z"];
-//		double distance = sqrt(x*x+y*y);
-//
-//
-//		if(distance<1){
-//			if(ball1["curSpeed"] != 0){
-//				ball2["curSpeed"] = ball1["curSpeed"];
-//				ball1["curSpeed"] = 0;
-//				}
-//			else{
-//				ball1["curSpeed"] = ball2["curSpeed"];
-//				ball2["curSpeed"] = 0;
-//				}
-//		}
-//
-//
-//
-//
-//
-//};
-
 void wait ( int seconds )
 {
   clock_t endwait;
@@ -961,9 +758,6 @@ void Preview() {
 
 	    dragended = false;
 
-//	    move = true;
-//	    ball1["speedX"] = (mposx * .01) - ball1["x"]*.01;
-//	    ball1["speedZ"] = (mposy * .01) - ball1["z"]*.01;
 	}
 
 
@@ -978,37 +772,6 @@ void Preview() {
 	theBall->draw();
 
 	glPopMatrix();
-
-
-
-// 	glPushMatrix();
-//
-//
-//
-// //	if (move==true) {
-// 	if(ball2["curSpeed"] > 0){
-//
-//     	ball2["curSpeed"] -= ball2["step"];
-//
-//     	ball2["x"] += direction.p[0]/(100-ball2["curSpeed"]);
-//     	ball2["z"] += direction.p[2]/(100-ball2["curSpeed"]);
-//
-//
-//
-//     	checkAndApplyCollision();
-//
-// 	}
-//
-// 	glTranslated(ball2["x"], 0, ball2["z"]);
-//
-// 	SetMaterialColor(1, 1, 0, 0);
-//      DrawSphere(Vec3(0, .5, 0), .5);
-//
-//
-//
-//      glPopMatrix();
-
-
 
     glPopMatrix();
 
