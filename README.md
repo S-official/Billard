@@ -1,6 +1,4 @@
 # Billard
-Ein Spiel mit OpenGL in C++ für das Modul: Computergrafik bei Martin Hering-Bertram und Peter Krug.
-
 Ziel des Spiels ist es den Gravity Pull zu erreichen. den Kreis unten links.
 
 Die Kugel wird mit der Maus gesteuert. Click and Drag.
