@@ -18,4 +18,5 @@ U - Quader/Zylinder breiter			J - Quader/Zylinder kürzer
 K - Quader/Zylinder nach Links rotieren		 I - Quaer/Zylinder nach rechts rotieren
 
 Beispielbild eines Tests, bei dem möglichst viele Objekte platziert wurden.
+
 ![Objekte](http://i.imgur.com/nGUuM73.png)
